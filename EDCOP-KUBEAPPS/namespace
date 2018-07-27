@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations: {}
+  labels:
+    created-by: kubeapps
+    name: kubeapps
+  name: kubeapps
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations: {}
+  labels:
+    created-by: kubeapps
+    name: kubeless
+  name: kubeless
+

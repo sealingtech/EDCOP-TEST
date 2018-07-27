@@ -1,0 +1,50 @@
+apiVersion: "kubernetes.com/v1"
+kind: Network
+metadata:
+  name: passive
+plugin: sriov
+args: '[
+       {
+                "if0": "enp216s0f3",
+                "ipam": {
+                  "type": "host-local",
+                  "subnet": "10.51.0.0/16",
+                  "rangeStart": "10.51.0.10",
+                  "rangeEnd": "10.51.0.150"
+                }
+        }
+        ]'
+---
+apiVersion: "kubernetes.com/v1"
+kind: Network
+metadata:
+  name: inline-1
+plugin: sriov
+args: '[
+       {
+                "if0": "enp216s0f1",
+                "ipam": {
+                  "type": "host-local",
+                  "subnet": "10.5.0.0/16",
+                  "rangeStart": "10.5.0.10",
+                  "rangeEnd": "10.5.0.150"
+                }
+        }
+        ]'
+---
+apiVersion: "kubernetes.com/v1"
+kind: Network
+metadata:
+  name: inline-2
+plugin: sriov
+args: '[
+       {
+                "if0": "enp216s0f2",
+                "ipam": {
+                  "type": "host-local",
+                  "subnet": "10.4.0.0/16",
+                  "rangeStart": "10.4.0.10",
+                  "rangeEnd": "10.4.0.150"
+                }
+        }
+        ]'
